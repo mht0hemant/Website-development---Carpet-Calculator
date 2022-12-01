@@ -1,0 +1,102 @@
+<! -- Author : Hemant Mahato-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+	
+		<link rel="stylesheet" href="cc.css">
+		<script>
+
+			function ComputeSquareFeet(length, width, overage)
+ 			{  
+ 			/* get the values for length, width, and overage */
+ 			/* compute the correct number of square feet needed */
+				var area = (length * width) * overage;
+ 			/* set the value of the appropriate form input area */
+ 			/* Perform a document.write to display the results on */
+				document.write("You should purchase " + area + " square feet of 	carpet.");
+ 			/* a new html page. */
+ 			}
+
+			function ComputeSquareYards(length, width, overage)
+ 			{
+ 			/* get the values for length, width, and overage */
+ 			/* compute the correct number of square yards needed */
+				var area = ( (length * width)/9 ) * overage;
+ 			/* set the value of the appropriate form input area */
+ 			/* Perform a document.write to display the results on */
+				document.write("You should purchase " + area + " square yards of carpet.");
+ 			/* a new html page. */
+ 			}
+
+ 		</script>
+
+		<title>Carpet Calculator</title>
+	</head>
+	<body>
+	
+	<h1>Carpet Calculator</h1>
+		<form>
+		
+		<label for="lengthbox">Enter the length of your room in feet</label><br>
+		<input type="number" id= "lengthbox" name="lengthbox"><br>
+			
+		<label for="widthbox">Enter the width of your room in feet</label><br>
+		<input type="number" id= "widthbox" name="widthbox"><br>
+			
+		<label for="overagebox"> Typically an allowance is made for room irregularites and unavoidable waste.<br>				Enter the percent overage as an integer in the interval [0, 20]</label><br>
+		<input type="number" id = "overagebox" name="overagebox"><br>
+			<table>			
+				<tr>				
+					<th class="location">
+						<fieldset>
+							<legend>Location</legend>
+							
+							<p>Choose a room for your carpet</p>
+							<p>Check all that apply.</p>
+							
+							<input type="checkbox" id="locationbox1" value="Family">
+							<label for="locationbox1">Family Room</label>
+							<br>
+							<input type="checkbox" id="locationbox2" value="Master bed">
+							<label for="locationbox2">Master Bedroom</label>
+							<br>
+							<input type="checkbox" id="locationbox3" value="Hall">
+							<label for="locationbox3">Hall</label>
+							<br>
+							<input type="checkbox" id="locationbox4" value="Standard bed">
+							<label for="locationbox4">Standard Bedroom</label>	
+						</fieldset>
+					</th>
+					<th class="colorFamily">
+						<fieldset>
+							<legend>Color Family</legend>
+							
+							<p>Which color carpet would you like?</p>
+							
+							<input type="radio" id="colorRadio1" name="carpetColor" value="Beign">
+							<label for="colorRadio1">Beiges</label>
+							<br>
+							<input type="radio"  id="colorRadio2" name="carpetColor" value="Brown">
+							<label for="colorRadio2">Browns</label>
+							<br>
+							<input type="radio"  id="colorRadio3" name="carpetColor" value="Red">
+							<label for="colorRadio3">Reds</label>
+							<br>
+							<input type="radio"  id="colorRadio4" name="carpetColor" value="Blue">
+							<label for="colorRadio4">Blues</label>
+							<br>
+							<input type="radio"  id="colorRadio5" name="carpetColor" value="Gold">
+							<label for="colorRadio5">Golds</label>	
+						</fieldset>
+					</th>				
+				</tr>			
+			</table><br>
+			<input type="button" value="Compute Square Feet" 
+				onclick="ComputeSquareFeet(document.getElementById('lengthbox').value, document.getElementById('widthbox').value, document.getElementById('overagebox').value ) "><br><br>
+			<input type="button" value="Compute Square Yards" 
+				onclick="ComputeSquareYards(document.getElementById('lengthbox').value, document.getElementById('widthbox').value, document.getElementById('overagebox').value ) "><br><br>
+			<input type="reset" value="Clear">
+		</form>
+	</body>
+</html>
